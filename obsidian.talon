@@ -37,15 +37,25 @@ bar bookmarks: user.obsidian("Bookmarks: Show bookmarks")
 please [<user.text>]:
     user.command_palette()
     insert(user.text or "")
-#"Navigate back"
-#"Navigate forward"
+show settings: user.obsidian("Open settings")
+
+file rename: key("F2")
+file move: user.obsidian("Move current file to another folder")
+file clone: user.obsidian("Make a copy of the current file")
+file delete: user.obsidian("Delete current file")
+file open folder: user.obsidian("Show in system explore")
+file reveal: user.obsidian("Files: Reveal current file in navigation")
+
+go back: key("ctrl-alt-left")
+go forward: key("ctrl-alt-right")
+
+style [heading|header|head] one: key("alt-1")
+style [heading|header|head] two: key("alt-2")
+style [heading|header|head] three: key("alt-3")
+style [heading|header|head] four: key("alt-4")
+style [heading|header|head] none: user.obsidian("Remove heading")
+
 #"Open another vault"
-#"Open help"
-#"Open settings"
-#"Set as heading 1"
-#"Set as heading 2"
-#"Set as heading 3"
-#"Set as heading 4"
 #"Toggle numbered list"
 #"Toggle bullet list"
 #"Toggle blockquote"

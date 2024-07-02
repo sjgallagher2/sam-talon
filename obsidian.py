@@ -16,25 +16,17 @@ def obsidian_command(cmd: str):
     actions.key("enter")
 
 
-@ctx.action_class("app")
-class AppActions:
-    def tab_open():
-        obsidian_command("New tab")
-
-    def tab_previous():
-        actions.key("ctrl-pageup")
-
-    def tab_next():
-        actions.key("ctrl-pagedown")
+# @ctx.action_class("app")
+# class AppActions:
 
 
 @ctx.action_class("edit")
 class EditActions:
-    def indent_more():
-        actions.key("tab")
+    def line_swap_up():
+        obsidian_command("Move line up")
     
-    def indent_less():
-        actions.key("shift-tab")
+    def line_swap_down():
+        obsidian_command("Move line down")
 
 
 @mod.action_class
@@ -47,5 +39,29 @@ class UserActions:
         """Run a command with obsidian command palette"""
         obsidian_command(command)
 
+
+@ctx.action_class("user")
+class UserActions:
+    # splits.py support begin
+    def split_clear():
+        obsidian_command("Close this tab group")
+
+    def split_window_down():
+        obsidian_command("Split down")
+
+    def split_window_right():
+        obsidian_command("Split right")
+    
+    def tab_jump(number: int):
+        if number < 10:
+            actions.key(f"ctrl-{number}")
+
+    def tab_final():
+        actions.key("ctrl-9")
+    
+    def replace(text: str):
+        actions.key("ctrl-h")
+        if text:
+            actions.insert(text)
 
 
