@@ -16,6 +16,7 @@ def obsidian_command(cmd: str):
     actions.key("enter")
 
 
+
 # @ctx.action_class("app")
 # class AppActions:
 
@@ -38,6 +39,15 @@ class UserActions:
     def obsidian(command: str):
         """Run a command with obsidian command palette"""
         obsidian_command(command)
+    
+    def activate_math_mode():
+        """Activate math mode commands"""
+        ctx.tags = ["user.find_and_replace", "user.line_commands", "user.tabs", "user.splits","user.latexmath"]
+        
+    def deactivate_math_mode():
+        """Deactivate math mode commands"""
+        ctx.tags = ["user.find_and_replace", "user.line_commands", "user.tabs", "user.splits"]
+
 
 
 @ctx.action_class("user")
@@ -64,4 +74,5 @@ class UserActions:
         if text:
             actions.insert(text)
 
+        
 

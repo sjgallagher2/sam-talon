@@ -5,18 +5,17 @@ tag(): user.line_commands
 tag(): user.splits
 tag(): user.tabs
 
-new equation:
+insert equation:
     insert("dm")
 
-new math:
+inline equation:
     insert("mk")
 
+variable: insert("mk")
+
 # TABLES
-new table:
-    #key("ctrl-alt-shift-t")
-    key("ctrl-p")
-    insert("Insert table")
-    key("enter")
+insert table: user.obsidian("Insert table")
+    
 add call right: key("ctrl-alt-shift-a")
 add call left: key("ctrl-alt-shift-b")
 add row above: key("ctrl-alt-shift-i")
@@ -45,6 +44,8 @@ file clone: user.obsidian("Make a copy of the current file")
 file delete: user.obsidian("Delete current file")
 file open folder: user.obsidian("Show in system explore")
 file reveal: user.obsidian("Files: Reveal current file in navigation")
+file hunt [<user.text>]:
+    user.obsidian("Quick switcher: open quick switcher")
 
 go back: key("ctrl-alt-left")
 go forward: key("ctrl-alt-right")
@@ -54,6 +55,9 @@ style [heading|header|head] two: key("alt-2")
 style [heading|header|head] three: key("alt-3")
 style [heading|header|head] four: key("alt-4")
 style [heading|header|head] none: user.obsidian("Remove heading")
+
+start math: user.activate_math_mode()
+stop math: user.deactivate_math_mode()
 
 #"Open another vault"
 #"Toggle numbered list"
