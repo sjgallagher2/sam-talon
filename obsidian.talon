@@ -56,8 +56,8 @@ style [heading|header|head] three: key("alt-3")
 style [heading|header|head] four: key("alt-4")
 style [heading|header|head] none: user.obsidian("Remove heading")
 
-start math: user.activate_math_mode()
-stop math: user.deactivate_math_mode()
+math start: user.activate_math_mode()
+math stop: user.deactivate_math_mode()
 
 #"Open another vault"
 #"Toggle numbered list"

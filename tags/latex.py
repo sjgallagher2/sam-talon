@@ -11,6 +11,8 @@ mod.list("tex_snippets",desc="TeX snippets for obsidian")
 ctx.lists["user.tex_snippets"] = {
     "bold that": ".,",
     "frack": "//",
+    "prime": "'",
+    "naughty": "0",
     "text": "text",
     "scared": "sr",  # avoid conflict with square
     "cubed": "cb",

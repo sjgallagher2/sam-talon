@@ -1,4 +1,4 @@
-from talon import Module,Context,actions,app
+from talon import Module,Context,actions,app,imgui,ui
 
 ctx = Context()
 mod = Module()
@@ -30,6 +30,14 @@ class EditActions:
         obsidian_command("Move line down")
 
 
+@imgui.open(x=700, y=0)
+def gui_math(gui: imgui.GUI):
+    gui.text("Math Mode")
+    gui.line()
+    if gui.button("Math Stop"):
+        actions.user.deactivate_math_mode()
+        
+
 @mod.action_class
 class UserActions:
     def command_palette():
@@ -43,11 +51,12 @@ class UserActions:
     def activate_math_mode():
         """Activate math mode commands"""
         ctx.tags = ["user.find_and_replace", "user.line_commands", "user.tabs", "user.splits","user.latexmath"]
+        gui_math.show()
         
     def deactivate_math_mode():
         """Deactivate math mode commands"""
         ctx.tags = ["user.find_and_replace", "user.line_commands", "user.tabs", "user.splits"]
-
+        gui_math.hide()
 
 
 @ctx.action_class("user")
