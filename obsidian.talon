@@ -55,6 +55,33 @@ style [heading|header|head] two: key("alt-2")
 style [heading|header|head] three: key("alt-3")
 style [heading|header|head] four: key("alt-4")
 style [heading|header|head] none: user.obsidian("Remove heading")
+bold that: key("ctrl-b")
+emphasize that: key("ctrl-i")
+link that: key("ctrl-k")
+link (paste|pace):
+    key("ctrl-k")
+    key("ctrl-v")
+
+select (paragraph|block):
+    key("home home home shift-end shift-end")
+cut (paragraph|block):
+    key("home home home shift-end shift-end")
+    key("ctrl-x")
+copy (paragraph|block):
+    key("home home home shift-end shift-end")
+    key("ctrl-c")
+go (paragraph|block) (up|last):
+    key("home home home")
+    key("ctrl-left")
+    key("home home")
+go (paragraph|block) (down|next):
+    key("end end end")
+    key("ctrl-right")
+    key("home")
+go (paragraph|block) start:
+    key("home home hom")
+go (paragraph|block) end:
+    key("end end end")
 
 math start: user.activate_math_mode()
 math stop: user.deactivate_math_mode()
