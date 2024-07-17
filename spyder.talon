@@ -31,3 +31,7 @@ debug exit: key("ctrl-shift-f12")
 file new: key("ctrl-n")
 file open: key("ctrl-o")
 file save: key("ctrl-s")
+
+comment that: key("ctrl-1")
+restart (colonel|kernel): key("ctrl-. y")
+remove all variables: key("ctrl-alt-r")
