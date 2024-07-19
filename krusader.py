@@ -60,10 +60,11 @@ class UserActions:
         actions.key("f9")
 
     def file_manager_current_path():
-        actions.key("ctrl-l")
-        with clip.capture() as path:
-            actions.edit.copy()
-        return path.get()
+        pass
+        # actions.key("ctrl-l")
+        # with clip.capture() as path:
+        #    actions.edit.copy()
+        # return path.get()
     
     
 
